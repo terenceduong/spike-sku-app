@@ -10,6 +10,7 @@ interface RenderContext {
 
 const skuRender: Render<RenderContext> = {
   renderApp: ({ SkuProvider, environment }) => {
+    console.log('renderapp in render.tsx')
     const appHtml = renderToString(
       <SkuProvider>
         <App environment={environment as ClientContext['environment']} />
