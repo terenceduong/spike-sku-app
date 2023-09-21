@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "sku start",
+    "start": "sku start-ssr",
     "test": "sku test",
-    "build": "sku build",
+    "build": "sku build-ssr",
     "serve": "sku serve",
     "lint": "sku lint",
     "format": "sku format"
