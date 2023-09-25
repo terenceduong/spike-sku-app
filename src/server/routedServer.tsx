@@ -1,24 +1,8 @@
 import { renderToString } from 'react-dom/server';
 import { createBrowserRouter, StaticRouter } from 'react-router-dom';
-
 // import fs from 'fs/promises';
 
 import App from '../App/App';
-
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <App environment='development'/>,
-//     loader: rootLoader,
-//     children: [
-//       {
-//         path: "team",
-//         element: <Team />,
-//         loader: teamLoader,
-//       },
-//     ],
-//   },
-// ]);
 
 const initialResponseTemplate = ({
   headTags,
@@ -86,7 +70,9 @@ export default () => ({
 
     const app = renderToString(
       <SkuProvider>
-        <App environment="development" />
+        <StaticRouter location={req.url} context={{}}>
+          <App environment="development" />
+        </StaticRouter>
       </SkuProvider>,
     );
     res.write(
